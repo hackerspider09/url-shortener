@@ -12,6 +12,8 @@ import {useNavigate, useParams} from "react-router-dom";
 import {BarLoader, BeatLoader} from "react-spinners";
 
 const LinkPage = () => {
+  const domain = window.location.hostname;
+  console.log(domain)
   const downloadImage = () => {
     const imageUrl = url?.qr;
     const fileName = url?.title;
@@ -76,11 +78,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimrr.in/${link}`}
+            href={`https://${domain}/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://trimrr.in/{link}
+            {`https://${domain}/${link}`}
           </a>
           <a
             href={url?.original_url}
@@ -97,7 +99,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://trimrr.in/${link}`)
+                navigator.clipboard.writeText(`https://${domain}/${link}`)
               }
             >
               <Copy />
