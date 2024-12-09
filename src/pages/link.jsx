@@ -87,7 +87,7 @@ const LinkPage = () => {
           <a
             href={url?.original_url}
             target="_blank"
-            className="flex items-center gap-1 hover:underline cursor-pointer"
+            className=" flex items-center gap-1 hover:underline cursor-pointer"
           >
             <LinkIcon className="p-1" />
             {url?.original_url}
